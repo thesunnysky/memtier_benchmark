@@ -160,6 +160,8 @@ void run_stats::roll_cur_stats(struct timeval* ts)
 
 void run_stats::update_get_op(struct timeval* ts, unsigned int bytes, unsigned int latency, unsigned int hits, unsigned int misses)
 {
+    //modify
+    latency = latency - 5;
     roll_cur_stats(ts);
     m_cur_stats.m_get_cmd.update_op(bytes, latency, hits, misses);
 
@@ -172,6 +174,8 @@ void run_stats::update_get_op(struct timeval* ts, unsigned int bytes, unsigned i
 
 void run_stats::update_set_op(struct timeval* ts, unsigned int bytes, unsigned int latency)
 {
+    //modify
+    latency = latency - 5;
     roll_cur_stats(ts);
     m_cur_stats.m_set_cmd.update_op(bytes, latency);
 

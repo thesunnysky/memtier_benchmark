@@ -461,6 +461,7 @@ void shard_connection::process_first_request() {
 
 void shard_connection::fill_pipeline(void)
 {
+    usleep(1 * 5);
     struct timeval now;
     gettimeofday(&now, NULL);
 
@@ -479,6 +480,7 @@ void shard_connection::fill_pipeline(void)
     }
 }
 
+//core
 void shard_connection::handle_event(short evtype)
 {
     // connect() returning to us?  normally we expect EV_WRITE, but for UNIX domain
