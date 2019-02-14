@@ -839,6 +839,7 @@ struct cg_thread {
         }
     }
 
+    //创建连接，添加event处理
     int prepare(void)
     {
         if (m_cg->create_clients(m_config->clients) < (int) m_config->clients)

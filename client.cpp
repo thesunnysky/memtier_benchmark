@@ -528,6 +528,7 @@ client_group::~client_group(void)
     m_base = NULL;
 }
 
+//创建所有的测试client
 int client_group::create_clients(int num)
 {
     for (int i = 0; i < num; i++) {
